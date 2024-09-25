@@ -30,7 +30,8 @@ namespace AppVendas.Migrations
 
                     b.Property<string>("CategoriaName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("CategoriaId");
 
@@ -102,10 +103,7 @@ namespace AppVendas.Migrations
                     b.Property<bool>("CadastroAtivo")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("CadastroId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("CategoriaId")
+                    b.Property<Guid>("CategoriaId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ProdutoNome")
@@ -173,7 +171,9 @@ namespace AppVendas.Migrations
                 {
                     b.HasOne("AppVendas.Models.Categoria", "Categoria")
                         .WithMany()
-                        .HasForeignKey("CategoriaId");
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Categoria");
                 });

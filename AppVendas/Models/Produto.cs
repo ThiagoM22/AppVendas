@@ -8,7 +8,7 @@
         public double QtadeEstoque { get; set; }
         public bool CadastroAtivo { get; set; }
         //Chave estrangeira 
-        public Guid CadastroId { get; set; }
+        public Guid CategoriaId { get; set; }
         public Categoria? Categoria { get; set; }
     }
 }

@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<AppVendas.Models.Cliente>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Clientes";
 }
 
-<h1>Index</h1>
+<div class="d-flex justify-content-between my-5 align-items-center">
+    <span class="display-6 w-75 justify-content-center">Cadastro de Clientes</span>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+    <a asp-action="Create" class="btn btn-secondary px-5 w-25 d-flex align-items-center justify-content-center"> <ion-icon name="add-circle-outline" class="fs-4"></ion-icon> <span class="fs-4 ms-2 fst-italic">Adicionar</span></a>
+
+</div>
 <table class="table">
     <thead>
         <tr>
