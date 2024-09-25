@@ -1,13 +1,12 @@
 ﻿@model AppVendas.Models.Cliente
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Clientes";
 }
 
-<h1>Create</h1>
-
-<h4>Cliente</h4>
-<hr />
+<div class="d-flex justify-content-between my-5 align-items-center">
+    <span class="display-6 w-75 justify-content-center">Cadastro de Clientes</span>
+</div>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -49,5 +48,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
