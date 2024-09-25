@@ -1,0 +1,28 @@
+﻿@model AppVendas.Models.Categoria
+
+@{
+    ViewData["Title"] = "Excluir Categoria";
+}
+
+<div class="d-flex justify-content-between my-5 align-items-center">
+    <span class="display-6 w-75 justify-content-center">Cadastro de Categorias</span>
+</div>
+
+<h3>Deseja excluir esse registro?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoriaName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoriaName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CategoriaId" />
+        <input type="submit" value="Excluir" class="btn btn-outline-danger px-5 mt-3 me-3 py-2" /> 
+        <a asp-action="Index" class="btn btn-outline-info align-item-center px-5  ms-5 mt-3 justify-content-center py-2"><ion-icon name="arrow-back-outline" class="me-2"></ion-icon>Voltar</a>
+    </form>
+</div>

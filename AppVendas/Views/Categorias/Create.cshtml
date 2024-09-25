@@ -1,0 +1,41 @@
+﻿    @model AppVendas.Models.Categoria
+
+@{
+    ViewData["Title"] = "Adicionar Categoria";
+}
+<div class="d-flex justify-content-between my-5 align-items-center">
+    <span class="display-6 w-75 justify-content-center">Cadastro de Categorias</span>
+</div>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label asp-for="CategoriaName" class="control-label"></label>
+                <input asp-for="CategoriaName" class="form-control" />
+                <span asp-validation-for="CategoriaName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 col-lg-2">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary d-flex px-5 align-items-center mt-3 w-100 justify-content-center py-2">
+                    <ion-icon name="save-outline" class="me-2"></ion-icon>Salvar
+                </button>
+            </div>
+        </div>
+        <div class="col-4 col-lg-8">
+        </div>
+        <div class="col-4 col-lg-2">
+            <a asp-action="Index" class="btn btn-outline-info align-item-center px-5 mt-3 ms-5 w-100 justify-content-center py-2"><ion-icon name="arrow-back-outline" class="me-2"></ion-icon>Voltar</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
