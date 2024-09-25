@@ -20,10 +20,11 @@ namespace AppVendas.Models
         public double QtadeEstoque { get; set; }
         [Display(Name = "Ativo?")]
 
-        public bool CadastroAtivo { get; set; } = true;
+        public bool? CadastroAtivo { get; set; } = true;
 
         //Chave estrangeira 
         [Required(ErrorMessage = "Por favor, selecione uma categoria!")]
+        [Display(Name = "Categoria")]
         public Guid CategoriaId { get; set; }
         public Categoria? Categoria { get; set; }
     }

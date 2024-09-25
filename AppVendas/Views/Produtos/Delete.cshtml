@@ -39,13 +39,13 @@
             @Html.DisplayNameFor(model => model.Categoria)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Categoria.CategoriaId)
+            @Html.DisplayFor(model => model.Categoria.CategoriaName)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="ProdutoId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="hidden" asp-for="CategoriaId" />
+        <input type="submit" value="Excluir" class="btn btn-outline-danger px-5 mt-3 me-3 py-2" />
+        <a asp-action="Index" class="btn btn-outline-info align-item-center px-5  ms-5 mt-3 justify-content-center py-2"><ion-icon name="arrow-back-outline" class="me-2"></ion-icon>Voltar</a>
     </form>
 </div>
